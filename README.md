@@ -12,10 +12,11 @@ conda activate RAG-demo
 ```
 
 Install packages.
-llama.cpp configured for metal, modify requirements.txt `llama-cpp-python` section if you're not using a modern mac
+llama.cpp configured for metal, modify pyproject.toml to suit your needs.
 
 ```
 pip install -r requirements.txt
+pip install llama-cpp-python
 ```
 
 Supply env var `MODEL_PATH` which refers to a path to quantized llm, see [https://github.com/ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) for instructions

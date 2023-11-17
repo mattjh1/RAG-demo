@@ -4,7 +4,5 @@ sentence_transformers
 faiss_cpu
 chainlit
 loguru
-dotenv
-llama-cpp-python \
-    --install-option="--CMAKE_ARGS=-DLLAMA_CUBLAS=on" \
-    --install-option="--FORCE_CMAKE=1"
+python-dotenv
+tiktoken

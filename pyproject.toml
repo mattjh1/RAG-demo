@@ -1,0 +1,8 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=42", "wheel", "cmake"]
+build-backend = "setuptools.build_meta"
+
+[tool.cmake]
+extra_cmake_args = ["-DLLAMA_CUBLAS=on", "-DFORCE_CMAKE=1"]
