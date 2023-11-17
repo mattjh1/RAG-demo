@@ -1,2 +1,8 @@
 .env
 .vscode
+.DS_Store
+.idea
+**/__pycache__
+**/.chainlit/
+*.faiss
+*.pkl
