@@ -7,7 +7,7 @@ This repo is intended to serve as a starting point for building and running a RA
 Create an env and activate
 
 ```
-conda create --name RAG-demo python=3.10
+conda create --name RAG-demo python=3.9.16
 conda activate RAG-demo
 ```
 
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 pip install llama-cpp-python
 ```
 
-Supply env var `MODEL_PATH` which refers to a path to quantized llm, see [https://github.com/ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) for instructions
+Supply `MODEL_PATH` which refers to quantized llm, see [https://github.com/ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) for instructions
 
 ```
 cp .env_example .env

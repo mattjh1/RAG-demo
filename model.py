@@ -18,7 +18,7 @@ just say that you don't know, don't try to make up an answer under any circumsta
 Context: {context}
 Question: {question}
 
-Only return the helpful thorough answer below and nothing else.
+Only return the helpful concise answer below and nothing else.
 Helpful and polite answer:
 """
 
@@ -39,9 +39,10 @@ def load_llm(useLocalLLM):
     if useLocalLLM:
         llm = LlamaCpp(
             model_path=os.getenv("MODEL_PATH"),
-            max_tokens=2048,  # maximum number of new tokens to be generated. It controls length of response.
+            max_tokens=500,  # maximum number of new tokens to be generated. It controls length of response.
             n_ctx=2048,
             temperature=0,
+            n_gpu_layers=4,
         )
     # option to use openAI model instead, API key required
     else:
@@ -89,3 +90,11 @@ def qa_bot():
     )
     logger.info(f"final_result: {qa}")
     return qa
+
+# output function
+def final_result(query):
+    logger.debug("Into def final_result")
+    qa_result = qa_bot()  # Calling definition func_qa_bot
+    response = qa_result({"query": query})
+    logger.info(f"func_final_result: {response}")
+    return response

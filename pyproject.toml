@@ -5,4 +5,14 @@ requires = ["setuptools>=42", "wheel", "cmake"]
 build-backend = "setuptools.build_meta"
 
 [tool.cmake]
-extra_cmake_args = ["-DLLAMA_CUBLAS=on", "-DFORCE_CMAKE=1"]
+extra_cmake_args = ["-DLLAMA_METAL=on"]
+
+[options]
+install_requires = [
+    "llama-cpp-python",
+]
+
+[options.extras_require]
+server = [
+    "llama-cpp-python[server]",
+]
