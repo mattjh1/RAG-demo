@@ -18,7 +18,7 @@ just say that you don't know, don't try to make up an answer under any circumsta
 Context: {context}
 Question: {question}
 
-Only return the helpful concise answer below and nothing else.
+Only return the helpful answer below and nothing else.
 Helpful and polite answer:
 """
 
@@ -39,7 +39,7 @@ def load_llm(useLocalLLM):
     if useLocalLLM:
         llm = LlamaCpp(
             model_path=os.getenv("MODEL_PATH"),
-            max_tokens=500,  # maximum number of new tokens to be generated. It controls length of response.
+            max_tokens=2048,  # maximum number of new tokens to be generated. It controls length of response.
             n_ctx=2048,
             temperature=0,
             n_gpu_layers=4,
@@ -68,7 +68,7 @@ def retrieval_qa_chain(llm, prompt, db):
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",  # 'stuff' documents to pass to llm
-        retriever=db.as_retriever(search_kwargs={"k": 3}),  # no.of results
+        retriever=db.as_retriever(search_kwargs={"k": 2}),  # no.of results
         return_source_documents=True, 
         chain_type_kwargs={"prompt": prompt},
     )
