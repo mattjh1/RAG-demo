@@ -42,7 +42,8 @@ def load_llm(useLocalLLM):
             max_tokens=2048,  # maximum number of new tokens to be generated. It controls length of response.
             n_ctx=2048,
             temperature=0,
-            n_gpu_layers=4,
+            n_batch=1024,
+            n_gpu_layers=12,
         )
     # option to use openAI model instead, API key required
     else:
