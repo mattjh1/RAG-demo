@@ -91,11 +91,3 @@ def qa_bot():
     )
     logger.info(f"final_result: {qa}")
     return qa
-
-# # output function
-# def final_result(query):
-#     logger.debug("Into def final_result")
-#     qa_result = qa_bot()  # Calling definition func_qa_bot
-#     response = qa_result({"query": query})
-#     logger.info(f"func_final_result: {response}")
-#     return response
